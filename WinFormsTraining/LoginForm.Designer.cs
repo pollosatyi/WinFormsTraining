@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            button1 = new Button();
+            buttonLogin = new Button();
             passField = new TextBox();
             pictureBox2 = new PictureBox();
             loginField = new TextBox();
@@ -46,7 +46,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(77, 6, 23);
-            panel1.Controls.Add(button1);
+            panel1.Controls.Add(buttonLogin);
             panel1.Controls.Add(passField);
             panel1.Controls.Add(pictureBox2);
             panel1.Controls.Add(loginField);
@@ -61,22 +61,23 @@
             panel1.MouseDown += panel1_MouseDown;
             panel1.MouseMove += panel1_MouseMove;
             // 
-            // button1
+            // buttonLogin
             // 
-            button1.BackColor = Color.FromArgb(15, 144, 14);
-            button1.Cursor = Cursors.Hand;
-            button1.FlatAppearance.BorderSize = 0;
-            button1.FlatAppearance.MouseDownBackColor = Color.FromArgb(4, 47, 3);
-            button1.FlatAppearance.MouseOverBackColor = Color.FromArgb(138, 122, 12);
-            button1.FlatStyle = FlatStyle.Flat;
-            button1.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 204);
-            button1.ForeColor = Color.White;
-            button1.Location = new Point(75, 387);
-            button1.Name = "button1";
-            button1.Size = new Size(175, 64);
-            button1.TabIndex = 5;
-            button1.Text = "Войти";
-            button1.UseVisualStyleBackColor = false;
+            buttonLogin.BackColor = Color.FromArgb(15, 144, 14);
+            buttonLogin.Cursor = Cursors.Hand;
+            buttonLogin.FlatAppearance.BorderSize = 0;
+            buttonLogin.FlatAppearance.MouseDownBackColor = Color.FromArgb(4, 47, 3);
+            buttonLogin.FlatAppearance.MouseOverBackColor = Color.FromArgb(138, 122, 12);
+            buttonLogin.FlatStyle = FlatStyle.Flat;
+            buttonLogin.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            buttonLogin.ForeColor = Color.White;
+            buttonLogin.Location = new Point(145, 383);
+            buttonLogin.Name = "buttonLogin";
+            buttonLogin.Size = new Size(175, 64);
+            buttonLogin.TabIndex = 5;
+            buttonLogin.Text = "Войти";
+            buttonLogin.UseVisualStyleBackColor = false;
+            buttonLogin.Click += buttonLogin_Click;
             // 
             // passField
             // 
@@ -184,6 +185,6 @@
         private TextBox passField;
         private PictureBox pictureBox2;
         private TextBox loginField;
-        private Button button1;
+        private Button buttonLogin;
     }
 }

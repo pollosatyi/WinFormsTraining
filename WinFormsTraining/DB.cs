@@ -9,7 +9,7 @@ namespace WinFormsTraining
 {
     public class DB
     {
-        MySqlConnection connection = new MySqlConnection("server=localhost;post=3306;username=root;password=root;database=training");
+        MySqlConnection connection = new MySqlConnection("server=localhost;port=3306;username=root;password=root;database=training");
 
         public void openConnection()
         {
