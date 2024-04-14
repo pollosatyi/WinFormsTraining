@@ -15,6 +15,8 @@ namespace WinFormsTraining
         public LoginForm()
         {
             InitializeComponent();
+            this.passField.AutoSize = false;
+            this.passField.Size = new Size(this.passField.Width, 64);
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

@@ -30,9 +30,9 @@
         {
             panel1 = new Panel();
             button1 = new Button();
-            textBox2 = new TextBox();
+            passField = new TextBox();
             pictureBox2 = new PictureBox();
-            textBox1 = new TextBox();
+            loginField = new TextBox();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
             closeButton = new Label();
@@ -47,9 +47,9 @@
             // 
             panel1.BackColor = Color.FromArgb(77, 6, 23);
             panel1.Controls.Add(button1);
-            panel1.Controls.Add(textBox2);
+            panel1.Controls.Add(passField);
             panel1.Controls.Add(pictureBox2);
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(loginField);
             panel1.Controls.Add(pictureBox1);
             panel1.Controls.Add(panel2);
             panel1.Dock = DockStyle.Fill;
@@ -75,15 +75,14 @@
             button1.Text = "Войти";
             button1.UseVisualStyleBackColor = false;
             // 
-            // textBox2
+            // passField
             // 
-            textBox2.Font = new Font("Times New Roman", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            textBox2.Location = new Point(75, 257);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(401, 64);
-            textBox2.TabIndex = 4;
-            textBox2.UseSystemPasswordChar = true;
+            passField.Font = new Font("Times New Roman", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            passField.Location = new Point(75, 257);
+            passField.Name = "passField";
+            passField.Size = new Size(401, 48);
+            passField.TabIndex = 4;
+            passField.UseSystemPasswordChar = true;
             // 
             // pictureBox2
             // 
@@ -95,14 +94,14 @@
             pictureBox2.TabIndex = 3;
             pictureBox2.TabStop = false;
             // 
-            // textBox1
+            // loginField
             // 
-            textBox1.Font = new Font("Times New Roman", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            textBox1.Location = new Point(75, 170);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(401, 64);
-            textBox1.TabIndex = 2;
+            loginField.Font = new Font("Times New Roman", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            loginField.Location = new Point(75, 170);
+            loginField.Multiline = true;
+            loginField.Name = "loginField";
+            loginField.Size = new Size(401, 64);
+            loginField.TabIndex = 2;
             // 
             // pictureBox1
             // 
@@ -177,9 +176,9 @@
         private Label label1;
         private Label closeButton;
         private PictureBox pictureBox1;
-        private TextBox textBox2;
+        private TextBox passField;
         private PictureBox pictureBox2;
-        private TextBox textBox1;
+        private TextBox loginField;
         private Button button1;
     }
 }
