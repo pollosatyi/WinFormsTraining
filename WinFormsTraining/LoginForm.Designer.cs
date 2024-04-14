@@ -57,6 +57,9 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(496, 481);
             panel1.TabIndex = 0;
+            panel1.Paint += panel1_Paint;
+            panel1.MouseDown += panel1_MouseDown;
+            panel1.MouseMove += panel1_MouseMove;
             // 
             // button1
             // 
@@ -138,6 +141,8 @@
             closeButton.TabIndex = 1;
             closeButton.Text = "x";
             closeButton.Click += closeButton_Click;
+            closeButton.MouseEnter += closeButton_MouseEnter;
+            closeButton.MouseLeave += closeButton_MouseLeave;
             // 
             // label1
             // 
