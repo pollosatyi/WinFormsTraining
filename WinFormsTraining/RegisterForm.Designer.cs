@@ -31,14 +31,14 @@
             buttonRegister = new Button();
             label1 = new Label();
             panel1 = new Panel();
+            textBox2 = new TextBox();
+            textBox1 = new TextBox();
             passField = new TextBox();
             pictureBox2 = new PictureBox();
             loginField = new TextBox();
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
             closeButton = new Label();
-            textBox1 = new TextBox();
-            textBox2 = new TextBox();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -90,6 +90,27 @@
             panel1.Name = "panel1";
             panel1.Size = new Size(800, 450);
             panel1.TabIndex = 1;
+            panel1.Paint += panel1_Paint;
+            panel1.MouseDown += panel1_MouseDown;
+            panel1.MouseMove += panel1_MouseMove;
+            // 
+            // textBox2
+            // 
+            textBox2.Font = new Font("Times New Roman", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            textBox2.Location = new Point(458, 129);
+            textBox2.Multiline = true;
+            textBox2.Name = "textBox2";
+            textBox2.Size = new Size(310, 64);
+            textBox2.TabIndex = 7;
+            // 
+            // textBox1
+            // 
+            textBox1.Font = new Font("Times New Roman", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            textBox1.Location = new Point(78, 129);
+            textBox1.Multiline = true;
+            textBox1.Name = "textBox1";
+            textBox1.Size = new Size(310, 64);
+            textBox1.TabIndex = 6;
             // 
             // passField
             // 
@@ -153,24 +174,7 @@
             closeButton.Size = new Size(27, 34);
             closeButton.TabIndex = 1;
             closeButton.Text = "x";
-            // 
-            // textBox1
-            // 
-            textBox1.Font = new Font("Times New Roman", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            textBox1.Location = new Point(78, 129);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(310, 64);
-            textBox1.TabIndex = 6;
-            // 
-            // textBox2
-            // 
-            textBox2.Font = new Font("Times New Roman", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            textBox2.Location = new Point(458, 129);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(310, 64);
-            textBox2.TabIndex = 7;
+            closeButton.Click += closeButton_Click;
             // 
             // RegisterForm
             // 
