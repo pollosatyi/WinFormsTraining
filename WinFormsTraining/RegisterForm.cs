@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MySql.Data.MySqlClient;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -116,11 +117,86 @@ namespace WinFormsTraining
 
         private void userSurNameField_Enter(object sender, EventArgs e)
         {
-            if(userSurNameField.Text == "Введите фамилию")
+            if (userSurNameField.Text == "Введите фамилию")
             {
                 userSurNameField.Text = "";
-                userSurNameField.ForeColor= Color.Black;
+                userSurNameField.ForeColor = Color.Black;
             }
+        }
+
+        private void buttonRegister_Click(object sender, EventArgs e)
+        {
+            if(userNameField.Text=="Введите имя")
+            {
+                MessageBox.Show("Введите имя");
+                return;
+            }
+
+            if (userSurNameField.Text == "Введите фамилию")
+            {
+                MessageBox.Show("Введите фамилию");
+                return;
+            }
+
+            if (loginField.Text == "Введите логин")
+            {
+                MessageBox.Show("Введите логин");
+                return;
+            }
+
+            if(passField.Text=="Введите пароль")
+            {
+                MessageBox.Show("Введите пароль");
+                return;
+
+            }
+
+            if (isUserExists()) { return; }
+
+            DB dB = new DB();
+            MySqlCommand command = new MySqlCommand("INSERT INTO `users` (`id`, `login`, `pass`, `name`, `surname`) VALUES ( null,@login, @pass,@name,@surname);",dB.getConnection());
+            command.Parameters.Add("@login",MySqlDbType.VarChar).Value=loginField.Text;
+            command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = passField.Text;
+            command.Parameters.Add("@name", MySqlDbType.VarChar).Value = userNameField.Text;
+            command.Parameters.Add("@surname", MySqlDbType.VarChar).Value = userSurNameField.Text;
+
+            dB.openConnection();
+            if (command.ExecuteNonQuery()==1) {
+                MessageBox.Show("Аккаунт был создан");
+
+            }
+            else
+            {
+                MessageBox.Show("Аккаунт не был создан");
+            }
+
+            dB.closeConnection();
+        }
+
+        public Boolean isUserExists()
+        {
+            DB db = new DB();
+            DataTable table = new DataTable();
+
+            MySqlDataAdapter adapter = new MySqlDataAdapter();
+
+            MySqlCommand command = new MySqlCommand("SELECT * FROM `users` WHERE `login`=@uL", db.getConnection());
+            command.Parameters.Add("@uL", MySqlDbType.VarChar).Value = loginField.Text;
+           
+
+            adapter.SelectCommand = command;
+            adapter.Fill(table);
+
+            if (table.Rows.Count > 0)
+            {
+                MessageBox.Show("Такой пользователь зарегистрирован");
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+
         }
     }
 }

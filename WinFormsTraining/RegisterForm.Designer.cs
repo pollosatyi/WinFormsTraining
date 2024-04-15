@@ -61,6 +61,7 @@
             buttonRegister.TabIndex = 5;
             buttonRegister.Text = "Зарегистрироваться";
             buttonRegister.UseVisualStyleBackColor = false;
+            buttonRegister.Click += buttonRegister_Click;
             // 
             // label1
             // 
