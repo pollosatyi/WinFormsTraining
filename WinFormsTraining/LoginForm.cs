@@ -72,20 +72,29 @@ namespace WinFormsTraining
             MySqlDataAdapter adapter = new MySqlDataAdapter();
 
             MySqlCommand command = new MySqlCommand("SELECT * FROM `users` WHERE `login`=@uL AND `pass`=@uP", db.getConnection());
-            command.Parameters.Add("@uL",MySqlDbType.VarChar).Value=loginUser;
+            command.Parameters.Add("@uL", MySqlDbType.VarChar).Value = loginUser;
             command.Parameters.Add("@uP", MySqlDbType.VarChar).Value = passUser;
 
             adapter.SelectCommand = command;
             adapter.Fill(table);
 
-            if(table.Rows.Count > 0 )
+            if (table.Rows.Count > 0)
             {
-                MessageBox.Show("Yes");
+                this.Hide();
+                MainForm mainForm = new MainForm();
+                mainForm.Show();
             }
             else
             {
                 MessageBox.Show("No");
             }
+        }
+
+        private void registerLabel_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            RegisterForm registerForm = new RegisterForm();
+            registerForm.Show();
         }
     }
 }

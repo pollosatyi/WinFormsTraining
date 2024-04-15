@@ -39,6 +39,7 @@
             pictureBox1 = new PictureBox();
             panel2 = new Panel();
             closeButton = new Label();
+            registerLabel = new Label();
             panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
@@ -55,7 +56,7 @@
             buttonRegister.FlatStyle = FlatStyle.Flat;
             buttonRegister.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 204);
             buttonRegister.ForeColor = Color.White;
-            buttonRegister.Location = new Point(307, 347);
+            buttonRegister.Location = new Point(307, 314);
             buttonRegister.Name = "buttonRegister";
             buttonRegister.Size = new Size(226, 64);
             buttonRegister.TabIndex = 5;
@@ -78,6 +79,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(77, 6, 23);
+            panel1.Controls.Add(registerLabel);
             panel1.Controls.Add(userSurNameField);
             panel1.Controls.Add(userNameField);
             panel1.Controls.Add(buttonRegister);
@@ -185,6 +187,18 @@
             closeButton.Text = "x";
             closeButton.Click += closeButton_Click;
             // 
+            // registerLabel
+            // 
+            registerLabel.AutoSize = true;
+            registerLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            registerLabel.ForeColor = Color.White;
+            registerLabel.Location = new Point(349, 407);
+            registerLabel.Name = "registerLabel";
+            registerLabel.Size = new Size(124, 20);
+            registerLabel.TabIndex = 8;
+            registerLabel.Text = "авторизоваться";
+            registerLabel.Click += registerLabel_Click;
+            // 
             // RegisterForm
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -216,5 +230,6 @@
         private Label closeButton;
         private TextBox userSurNameField;
         private TextBox userNameField;
+        private Label registerLabel;
     }
 }

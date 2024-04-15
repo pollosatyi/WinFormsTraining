@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
+            registerLabel = new Label();
             buttonLogin = new Button();
             passField = new TextBox();
             pictureBox2 = new PictureBox();
@@ -46,6 +47,7 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(77, 6, 23);
+            panel1.Controls.Add(registerLabel);
             panel1.Controls.Add(buttonLogin);
             panel1.Controls.Add(passField);
             panel1.Controls.Add(pictureBox2);
@@ -61,6 +63,18 @@
             panel1.MouseDown += panel1_MouseDown;
             panel1.MouseMove += panel1_MouseMove;
             // 
+            // registerLabel
+            // 
+            registerLabel.AutoSize = true;
+            registerLabel.Font = new Font("Segoe UI", 11.25F, FontStyle.Bold, GraphicsUnit.Point, 204);
+            registerLabel.ForeColor = Color.White;
+            registerLabel.Location = new Point(193, 445);
+            registerLabel.Name = "registerLabel";
+            registerLabel.Size = new Size(142, 20);
+            registerLabel.TabIndex = 6;
+            registerLabel.Text = "еще нет аккаунта?";
+            registerLabel.Click += registerLabel_Click;
+            // 
             // buttonLogin
             // 
             buttonLogin.BackColor = Color.FromArgb(15, 144, 14);
@@ -71,7 +85,7 @@
             buttonLogin.FlatStyle = FlatStyle.Flat;
             buttonLogin.Font = new Font("Segoe UI", 15F, FontStyle.Bold, GraphicsUnit.Point, 204);
             buttonLogin.ForeColor = Color.White;
-            buttonLogin.Location = new Point(145, 383);
+            buttonLogin.Location = new Point(153, 344);
             buttonLogin.Name = "buttonLogin";
             buttonLogin.Size = new Size(175, 64);
             buttonLogin.TabIndex = 5;
@@ -186,5 +200,6 @@
         private PictureBox pictureBox2;
         private TextBox loginField;
         private Button buttonLogin;
+        private Label registerLabel;
     }
 }

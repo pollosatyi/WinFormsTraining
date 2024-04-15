@@ -28,7 +28,7 @@ namespace WinFormsTraining
 
         private void closeButton_Click(object sender, EventArgs e)
         {
-            this.Close();
+            Application.Exit();
         }
 
         private void panel1_Paint(object sender, PaintEventArgs e)
@@ -126,7 +126,7 @@ namespace WinFormsTraining
 
         private void buttonRegister_Click(object sender, EventArgs e)
         {
-            if(userNameField.Text=="Введите имя")
+            if (userNameField.Text == "Введите имя")
             {
                 MessageBox.Show("Введите имя");
                 return;
@@ -144,7 +144,7 @@ namespace WinFormsTraining
                 return;
             }
 
-            if(passField.Text=="Введите пароль")
+            if (passField.Text == "Введите пароль")
             {
                 MessageBox.Show("Введите пароль");
                 return;
@@ -154,14 +154,15 @@ namespace WinFormsTraining
             if (isUserExists()) { return; }
 
             DB dB = new DB();
-            MySqlCommand command = new MySqlCommand("INSERT INTO `users` (`id`, `login`, `pass`, `name`, `surname`) VALUES ( null,@login, @pass,@name,@surname);",dB.getConnection());
-            command.Parameters.Add("@login",MySqlDbType.VarChar).Value=loginField.Text;
+            MySqlCommand command = new MySqlCommand("INSERT INTO `users` (`id`, `login`, `pass`, `name`, `surname`) VALUES ( null,@login, @pass,@name,@surname);", dB.getConnection());
+            command.Parameters.Add("@login", MySqlDbType.VarChar).Value = loginField.Text;
             command.Parameters.Add("@pass", MySqlDbType.VarChar).Value = passField.Text;
             command.Parameters.Add("@name", MySqlDbType.VarChar).Value = userNameField.Text;
             command.Parameters.Add("@surname", MySqlDbType.VarChar).Value = userSurNameField.Text;
 
             dB.openConnection();
-            if (command.ExecuteNonQuery()==1) {
+            if (command.ExecuteNonQuery() == 1)
+            {
                 MessageBox.Show("Аккаунт был создан");
 
             }
@@ -182,7 +183,7 @@ namespace WinFormsTraining
 
             MySqlCommand command = new MySqlCommand("SELECT * FROM `users` WHERE `login`=@uL", db.getConnection());
             command.Parameters.Add("@uL", MySqlDbType.VarChar).Value = loginField.Text;
-           
+
 
             adapter.SelectCommand = command;
             adapter.Fill(table);
@@ -197,6 +198,13 @@ namespace WinFormsTraining
                 return false;
             }
 
+        }
+
+        private void registerLabel_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            LoginForm loginForm = new LoginForm();
+            loginForm.Show();
         }
     }
 }
