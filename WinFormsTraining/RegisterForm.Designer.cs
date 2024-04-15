@@ -31,8 +31,8 @@
             buttonRegister = new Button();
             label1 = new Label();
             panel1 = new Panel();
-            textBox2 = new TextBox();
-            textBox1 = new TextBox();
+            userSurNameField = new TextBox();
+            userNameField = new TextBox();
             passField = new TextBox();
             pictureBox2 = new PictureBox();
             loginField = new TextBox();
@@ -77,8 +77,8 @@
             // panel1
             // 
             panel1.BackColor = Color.FromArgb(77, 6, 23);
-            panel1.Controls.Add(textBox2);
-            panel1.Controls.Add(textBox1);
+            panel1.Controls.Add(userSurNameField);
+            panel1.Controls.Add(userNameField);
             panel1.Controls.Add(buttonRegister);
             panel1.Controls.Add(passField);
             panel1.Controls.Add(pictureBox2);
@@ -94,23 +94,27 @@
             panel1.MouseDown += panel1_MouseDown;
             panel1.MouseMove += panel1_MouseMove;
             // 
-            // textBox2
+            // userSurNameField
             // 
-            textBox2.Font = new Font("Times New Roman", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            textBox2.Location = new Point(458, 129);
-            textBox2.Multiline = true;
-            textBox2.Name = "textBox2";
-            textBox2.Size = new Size(310, 64);
-            textBox2.TabIndex = 7;
+            userSurNameField.Font = new Font("Times New Roman", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            userSurNameField.Location = new Point(458, 129);
+            userSurNameField.Multiline = true;
+            userSurNameField.Name = "userSurNameField";
+            userSurNameField.Size = new Size(310, 64);
+            userSurNameField.TabIndex = 7;
+            userSurNameField.Enter += userSurNameField_Enter;
+            userSurNameField.Leave += userSurnameField_Leave;
             // 
-            // textBox1
+            // userNameField
             // 
-            textBox1.Font = new Font("Times New Roman", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
-            textBox1.Location = new Point(78, 129);
-            textBox1.Multiline = true;
-            textBox1.Name = "textBox1";
-            textBox1.Size = new Size(310, 64);
-            textBox1.TabIndex = 6;
+            userNameField.Font = new Font("Times New Roman", 26.25F, FontStyle.Regular, GraphicsUnit.Point, 204);
+            userNameField.Location = new Point(78, 129);
+            userNameField.Multiline = true;
+            userNameField.Name = "userNameField";
+            userNameField.Size = new Size(310, 64);
+            userNameField.TabIndex = 6;
+            userNameField.Enter += userNameField_Enter;
+            userNameField.Leave += userNameField_Leave;
             // 
             // passField
             // 
@@ -121,6 +125,8 @@
             passField.TabIndex = 4;
             passField.UseSystemPasswordChar = true;
             passField.TextChanged += passField_TextChanged;
+            passField.Enter += passField_Enter;
+            passField.Leave += passField_Leave;
             // 
             // pictureBox2
             // 
@@ -140,6 +146,8 @@
             loginField.Name = "loginField";
             loginField.Size = new Size(310, 64);
             loginField.TabIndex = 2;
+            loginField.Enter += loginField_Enter;
+            loginField.Leave += loginField_Leave;
             // 
             // pictureBox1
             // 
@@ -205,7 +213,7 @@
         private PictureBox pictureBox1;
         private Panel panel2;
         private Label closeButton;
-        private TextBox textBox2;
-        private TextBox textBox1;
+        private TextBox userSurNameField;
+        private TextBox userNameField;
     }
 }
